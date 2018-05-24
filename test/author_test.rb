@@ -22,7 +22,14 @@ class AuthorTest < Minitest::Test
     jane_eyre = Book.new({author_first_name: "Charlotte", author_last_name: "Bronte", publication_date: "1847", title: "Jane Eyre"})
 
     assert jane_eyre
-    binding.pry   
+  end
+
+  def test_added_book_is_accessible_in_books_array
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    jane_eyre = Book.new({author_first_name: "Charlotte", author_last_name: "Bronte", publication_date: "1847", title: "Jane Eyre"})
+
+    assert charlotte_bronte.books
+    assert charlotte_bronte.books[0]
   end
 
 end
